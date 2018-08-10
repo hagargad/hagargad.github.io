@@ -2,58 +2,97 @@
 <html>
 <title>HAGAR HOSNY</title>
 <meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #E3E60B;
+    background-color: #2727BF;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: #ffffff;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    font-family: "lato";
+    color :#ffffff;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #FFC300;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #FF5733;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #C3CED3;
+    border-top: none;
+}
+
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.topright:hover {color: red;}
 </style>
 
+</head>
+
 <body>
-
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-     href="javascript:void(0)" 
-    onclick="myFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i></a>
-    
-    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-    <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECTS</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-  </div>
-</div>
-
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-
-l arge w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
-  <a href="#projects" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PROJECTS</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-</div>
-
-<!-- ----------------------------------------------------------- -->
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-
-
-<!-- ----------------------------------------------------------- -->
-  <!-- The About Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about">
+  
+  <div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
     <h2 class="w3-wide">Hagar Hosny Gad Mohamed Gad</h2>
     <p class="w3-opacity"><i>Front-End Developer</i></p>
 
-   
-        
-        <div class="w3-container w3-card w3-white" >    <!--- start -->
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event, 'about')" 
+    id="defaultOpen">About</button>
+    <button class="tablinks" onclick="opentab(event, 'education')">Education</button>
 
-     <p class="w3-text-grey w3-padding-16 w3-xxlarge w3-text-teal">
-       <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Basic Information</b> </br>  </p>
-       
+  <button class="tablinks" onclick="opentab(event, 'skills')">Skills</button>
+  <button class="tablinks" onclick="opentab(event, 'courses')">Courses</butto>
+  <button class="tablinks" onclick="opentab(event, 'languages')">Languages</button> 
+
+<button class="tablinks" onclick="opentab(event, 'work')">Work Experience</button>
+
+<button class="tablinks" onclick="opentab(event, 'projects')">Projects
+  </button>
+
+  <button class="tablinks" onclick="opentab(event, 'contact')">Contact
+  </button>
+  </div>
+
+<div id="about" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
+ 
+ <div class="w3-container w3-card w3-white" >    <!--- start -->
+
+     <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Basic Information</h2>
        
     <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Front-End Developer</p>
     <p><i class="fa fa-female fa-fw w3-margin-right w3-large w3-text-teal "></i>Female</p>
@@ -63,24 +102,31 @@ l arge w3-hide-medium w3-top" style="margin-top:46px">
          
   </div>
 
-     <hr>
-    <p class="w3-text-grey w3-padding-16 w3-xxlarge w3-text-teal">
-       <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal">
-       </i>Courses</b>
-       <h3>CCNA</h3>
-       <h3>Software Testing (ISTQB)</h3>
-    </p>
-       <hr>
+</div>
 
+<div id="education" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
+<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        
+       
+          <h5 class="w3-opacity"><b>BACHELOR OF COMPUTER ENGINEERING</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018</h6>
+          <p>ALEXANDRIA UNIVERSITY FACULTY OF ENGINEERING </p>
+          <hr>
+        
+        
+       
+          <h5 class="w3-opacity"><b>AMERICAN DIPLOMA</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013</h6>
+          <p>EL-QUDS AMERICAN SCHOOL</p>
+</div>
 
-       <p class="w3-text-grey w3-padding-16 w3-xxlarge w3-text-teal">
-       <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal">
-
-
-       </i>Skills</b>
-    </p>
-    <!--- Here -->
-          <p>Adobe Illustrator</p>
+<div id="skills" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
+<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Skills</h2>
+       <p>Adobe Illustrator</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
           </div>
@@ -154,9 +200,23 @@ l arge w3-hide-medium w3-top" style="margin-top:46px">
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
           </div>
-           <hr>
+</div>
 
-        <p class="w3-text-grey w3-padding-16 w3-xxlarge w3-text-teal"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+<div id="courses" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
+    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Courses</h2>
+       <h3>CCNA</h3>
+       <h3>Software Testing (ISTQB)</h3>
+       <h3>JAVA (New Horizons)</h3>
+    </p>
+</div>
+
+<div id="languages" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
+<p class="w3-text-grey w3-padding-16 w3-xxlarge w3-text-teal">
+  <i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
        
         
           <p>English</p>
@@ -179,12 +239,12 @@ l arge w3-hide-medium w3-top" style="margin-top:46px">
             <div class="w3-round-xlarge w3-teal" style="height:24px;width:50%">50%</div>
           </div>
          </br>
-          
+</div>
 
-        
-           <hr>
-
-          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience
+<div id="work" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
+<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience
           </h2>
          
           <div >
@@ -210,41 +270,18 @@ l arge w3-hide-medium w3-top" style="margin-top:46px">
           <p>Front-End developer in a start up company working for w specific project.</p>
           <hr>
         </div>
-      </br>
-       
-        
-        
-     
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        
-       
-          <h5 class="w3-opacity"><b>BACHELOR OF COMPUTER ENGINEERING</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018</h6>
-          <p>ALEXANDRIA UNIVERSITY FACULTY OF ENGINEERING </p>
-          <hr>
-        
-        
-       
-          <h5 class="w3-opacity"><b>AMERICAN DIPLOMA</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013</h6>
-          <p>EL-QUDS AMERICAN SCHOOL</p>
-          <hr>
-       
-        </div>
-        
-  </div>
+</div>
 
-<!-- ----------------------------------------------------------- -->
-  <!-- The Projects Section -->
-  <div class="w3-black" id="projects">
-    <h1>projects sections</h1>
-  </div>
+<div id="projects" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
 
+</div>
 
-
-<!-- ----------------------------------------------------------- -->
-  <!-- The Contact Section -->
-  <div class="w3-container w3-card w3-white" id="contact">
+<div id="contact" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">
+    &times</span>
+<div class="w3-container w3-card w3-white" id="contact">
     <h2 class="w3-wide w3-center">CONTACT</h2>
     <div class="w3-row w3-padding-32">
       <div class="w3-col m6 w3-large w3-margin-bottom">
@@ -258,11 +295,11 @@ l arge w3-hide-medium w3-top" style="margin-top:46px">
 
     </div>
   </div>
-  
-<!-- End Page Content -->
 </div>
 
-<!-- ---------------------------------------------------------- -->
+
+</div>
+
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   <a class="fa fa-facebook-official w3-hover-opacity" href="https://www.facebook.com/hagar.hosni"></a>
@@ -273,27 +310,25 @@ l arge w3-hide-medium w3-top" style="margin-top:46px">
   <p class="w3-medium">Powered by Hagar Hosny</p>
 </footer>
 
-<!-- ---------------------------------------------------------- -->
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
+function opentab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
     }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 </script>
-
+     
 </body>
-</html>
+</html> 
 
